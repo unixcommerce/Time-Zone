@@ -1,25 +1,24 @@
 <html>
 <body>
 
-<style>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Timezone</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
 body {
-
      background-color: #ffffff;
-
      font-family: Arial, sans-serif;
   }
 
-
   table {
-
     font-family: Arial, sans-serif;
   width: 100%;
   height: 100%;
       font-size: 12px;
 }
-
-
-
 
 textarea {
   font-family: Arial, sans-serif;
@@ -27,130 +26,96 @@ textarea {
     width: 100%;
     height: 100%;
     padding: 10px;
-
-
 }
-
 
 button {
   resize: none;
   width: 100%;
   height: 100%;
 
-
 }
 
 
-#clock {
-
-  font-size: 56px;
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+#curTime{
+  font-weight: bold;
 }
-
 
 </style>
-
+</head>
 
 <?php include 'database.php';?>
-
-
-<script type="text/JavaScript">
-
-
-function currentTime() {
-  var date = new Date(); /* creating object of Date class */
-  var hour = date.getHours();
-  var min = date.getMinutes();
-  var sec = date.getSeconds();
-  hour = updateTime(hour);
-  min = updateTime(min);
-  sec = updateTime(sec);
-  document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
-    var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
-}
-
-function updateTime(k) {
-  if (k < 10) {
-    return "0" + k;
-  }
-  else {
-    return k;
-  }
-}
-
-currentTime(); /* calling currentTime() function to initiate the process */
-
-
-
-</script>
-
-
-
 <?php
 
 
-
-
 $line2="";
-$line3=" Time in ";
-
-
+$line3="Local time ";
 $number = $_GET["number"];
-
 $line1="<table><tr><td style='padding:5px; height:10px'>#" ."<b>" . $number . "</b>". " ";
-
 $phone = preg_replace('/[^0-9]+/', '', $number);
-
 $area = substr($phone, 0, 3);
-
 echo $output;
-
 if ($area == "201") {
-
-date_default_timezone_set("America/New_York");
+$php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
 echo $line1;
 echo $line2;
 // echo $line2 . "New Jersey";
 echo "";
 echo  $line3 . "New Jersey". ":";
-echo date(" h:i a"); $state="New Jersey";
+$state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
+
                     }
 
 elseif ($area == "202") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "District of Columbia";
   echo "";
   echo  $line3 . "District of Columbia". ":";
-  echo date(" h:i a"); $state="District of Columbia";
+  $state="District of Columbia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
+  
 
 }
 
 elseif ($area == "203") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Connecticut";
   echo "";
   echo  $line3 . "Connecticut". ":";
-  echo date(" h:i a"); $state="Connecticut";
+  $state="Connecticut";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
+  
 
 }
 
   elseif ($area == "205") {
 
-    date_default_timezone_set("America/Mexico_City");
+    $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
     echo $line1;
     echo $line2;
     // echo $line2 . "Alabama";
     echo "";
     echo  $line3 . "Alabama". ":";
-    echo date(" h:i a"); $state="Alabama";
+    $state="Alabama";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
   }
 
@@ -158,37 +123,49 @@ elseif ($area == "203") {
 
   elseif ($area == "206") {
 
-    date_default_timezone_set("America/Los_Angeles");
+    $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
     echo $line1;
     echo $line2;
     // echo $line2 . "Washington";
     echo "";
     echo  $line3 . "Washington". ":";
-    echo date(" h:i a"); $state="Washington";
+    $state="Washington";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
   }
 
   elseif ($area == "207") {
 
-    date_default_timezone_set("America/New_York");
+    $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
     echo $line1;
     echo $line2;
     // echo $line2 . "Maine";
     echo "";
     echo  $line3 . "Maine". ":";
-    echo date(" h:i a"); $state="Maine";
+    $state="Maine";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
   }
 
   elseif ($area == "208") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Idaho";
   echo "";
   echo  $line3 . "Idaho". ":";
-  echo date(" h:i a"); $state="Idaho";
+  $state="Idaho";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -196,38 +173,50 @@ elseif ($area == "203") {
 
 elseif ($area == "209") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "210") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "212") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -235,13 +224,17 @@ elseif ($area == "212") {
 
 elseif ($area == "213") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -249,65 +242,85 @@ elseif ($area == "213") {
 
 elseif ($area == "214") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "215") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "216") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "217") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "218") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -315,13 +328,17 @@ elseif ($area == "218") {
 
 elseif ($area == "219") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -329,13 +346,17 @@ elseif ($area == "219") {
 
 elseif ($area == "220") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -343,52 +364,68 @@ elseif ($area == "220") {
 
 elseif ($area == "223") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "224") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "225") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Louisiana";
   echo "";
   echo  $line3 . "Louisiana". ":";
-  echo date(" h:i a"); $state="Louisiana";
+  $state="Louisiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "228") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Mississippi";
   echo "";
   echo  $line3 . "Mississippi". ":";
-  echo date(" h:i a"); $state="Mississippi";
+  $state="Mississippi";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -396,143 +433,187 @@ elseif ($area == "228") {
 
 elseif ($area == "229") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "231") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michigan";
+  $state="Michigan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "251") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Alabama";
   echo "";
   echo  $line3 . "Alabama". ":";
-  echo date(" h:i a"); $state="Alabama";
+  $state="Alabama";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "252") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "253") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Washington";
   echo "";
   echo  $line3 . "Washington". ":";
-  echo date(" h:i a"); $state="Washington";
+  $state="Washington";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "254") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "256") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Alabama";
   echo "";
   echo  $line3 . "Alabama". ":";
-  echo date(" h:i a"); $state="Alabama";
+  $state="Alabama";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "260") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "262") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wisconsin";
   echo "";
   echo  $line3 . "Wisconsin". ":";
-  echo date(" h:i a"); $state="Wisconsin";
+  $state="Wisconsin";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "267") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "269") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michagan";
   echo "";
   echo  $line3 . "Michagan". ":";
-  echo date(" h:i a"); $state="Michagan";
+  $state="Michagan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -540,52 +621,68 @@ elseif ($area == "269") {
 
 elseif ($area == "270") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kentucky";
   echo "";
   echo  $line3 . "Kentucky". ":";
-  echo date(" h:i a"); $state="Kentucky";
+  $state="Kentucky";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "272") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "276") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virgina";
   echo "";
   echo  $line3 . "Virgina". ":";
-  echo date(" h:i a"); $state="Virgina";
+  $state="Virgina";
+  echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "279") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -593,13 +690,17 @@ elseif ($area == "279") {
 
 elseif ($area == "310") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -607,39 +708,51 @@ elseif ($area == "310") {
 
 elseif ($area == "281") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "301") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Maryland";
   echo "";
   echo  $line3 . "Maryland". ":";
-  echo date(" h:i a"); $state="Maryland";
+  $state="Maryland";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "302") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Delaware";
   echo "";
   echo  $line3 . "Delaware". ":";
-  echo date(" h:i a"); $state="Delaware";
+  $state="Delaware";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -647,204 +760,287 @@ elseif ($area == "302") {
 
 elseif ($area == "303") {
 
-  date_default_timezone_set("America/Denver");
+  $php_var = 360;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Colorado";
   echo "";
   echo  $line3 . "Colorado". ":";
-  echo date(" h:i a"); $state="Colorado";
+  $state="Colorado";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "304") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "West Virginia";
   echo "";
   echo  $line3 . "West Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "305") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240;  
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
-  echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  echo  $line3 . "Florida". ": ";
+  $state="Florida";
+  echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
+  // Working on Javascript Clock
+  
+
+}
+
+elseif ($area == "555") {
+	
+  $php_var = -330; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>"; 
+  echo $line1;
+  echo $line2;
+  // echo $line2 . "Florida";
+  echo "";
+  echo  $line3 . "Florida". ": ";
+  $state="Florida";
+  echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
+  // Working on Javascript Clock
+  
+  
 
 }
 
 
 elseif ($area == "307") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wyoming";
   echo "";
   echo  $line3 . "Wyoming". ":";
-  echo date(" h:i a"); $state="Wyoming";
+  $state="Wyoming";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "308") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Nebraska";
   echo "";
   echo  $line3 . "Nebraska". ":";
-  echo date(" h:i a"); $state="Nebraska";
+  $state="Nebraska";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "309") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "313") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michagan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michagan";
+  $state="Michagan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "314") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Missouri";
   echo "";
   echo  $line3 . "Missouri". ":";
-  echo date(" h:i a"); $state="Missouri";
+  $state="Missouri";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "315") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "316") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kansas";
   echo "";
   echo  $line3 . "Kansas". ":";
-  echo date(" h:i a"); $state="Kansas";
+  $state="Kansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "317") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "318") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "318") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Louisiana";
   echo "";
   echo  $line3 . "Louisiana". ":";
-  echo date(" h:i a"); $state="Louisiana";
+  $state="Louisiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "319") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Iowa";
   echo "";
   echo  $line3 . "Iowa". ":";
-  echo date(" h:i a"); $state="Iowa";
+  $state="Iowa";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "320") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "321") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -852,318 +1048,418 @@ elseif ($area == "321") {
 
 elseif ($area == "323") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "325") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "326") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "330") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "331") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "332") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "334") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Alabama";
   echo "";
   echo  $line3 . "Alabama". ":";
-  echo date(" h:i a"); $state="Alabama";
+  $state="Alabama";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "336") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "337") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Louisiana";
   echo "";
   echo  $line3 . "Louisiana". ":";
-  echo date(" h:i a"); $state="Louisiana";
+  $state="Louisiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "339") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "341") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "346") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "347") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "351") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "341") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "346") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "347") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "351") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "352") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "360") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Washington";
   echo "";
   echo  $line3 . "Washington". ":";
-  echo date(" h:i a"); $state="Washington";
+  $state="Washington";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "361") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "364") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kentucky";
   echo "";
   echo  $line3 . "Kentucky". ":";
-  echo date(" h:i a"); $state="Kentucky";
+  $state="Kentucky";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "380") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "385") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Utah";
   echo "";
   echo  $line3 . "Utah". ":";
-  echo date(" h:i a"); $state="Utah";
+  $state="Utah";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "386") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1171,168 +1467,220 @@ elseif ($area == "386") {
 
 elseif ($area == "401") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Rhode Island";
   echo "";
   echo  $line3 . "Rhode Island". ":";
-  echo date(" h:i a"); $state="Rhode Island";
+  $state="Rhode Island";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "402") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Nebraska";
   echo "";
   echo  $line3 . "Nebraska". ":";
-  echo date(" h:i a"); $state="Nebraska";
+  $state="Nebraska";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "404") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "405") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oklahoma";
   echo "";
   echo  $line3 . "Oklahoma". ":";
-  echo date(" h:i a"); $state="Oklahoma";
+  $state="Oklahoma";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "406") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Montana";
   echo "";
   echo  $line3 . "Montana". ":";
-  echo date(" h:i a"); $state="Montana";
+  $state="Montana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "407") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "408") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "409") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "410") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Maryland";
   echo "";
   echo  $line3 . "Maryland". ":";
-  echo date(" h:i a"); $state="Maryland";
+  $state="Maryland";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "412") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "413") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "414") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wisconsin";
   echo "";
   echo  $line3 . "Wisconsin". ":";
-  echo date(" h:i a"); $state="Wisconsin";
+  $state="Wisconsin";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "415") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1340,167 +1688,219 @@ elseif ($area == "415") {
 
 elseif ($area == "417") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Missouri";
   echo "";
   echo  $line3 . "Missouri". ":";
-  echo date(" h:i a"); $state="Missouri";
+  $state="Missouri";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "419") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "423") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "424") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "425") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Washington";
   echo "";
   echo  $line3 . "Washington". ":";
-  echo date(" h:i a"); $state="Washington";
+  $state="Washington";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "430") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "432") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "434") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "435") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Utah";
   echo "";
   echo  $line3 . "Utah". ":";
-  echo date(" h:i a"); $state="Utah";
+  $state="Utah";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "440") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "442") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "443") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Maryland";
   echo "";
   echo  $line3 . "Maryland". ":";
-  echo date(" h:i a"); $state="Maryland";
+  $state="Maryland";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "445") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1508,13 +1908,17 @@ elseif ($area == "445") {
 
 elseif ($area == "456") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1522,26 +1926,34 @@ elseif ($area == "456") {
 
 elseif ($area == "458") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oregon";
   echo "";
   echo  $line3 . "Oregon". ":";
-  echo date(" h:i a"); $state="Oregon";
+  $state="Oregon";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "463") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1549,39 +1961,51 @@ elseif ($area == "463") {
 
 elseif ($area == "469") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "470") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "475") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Connecticut";
   echo "";
   echo  $line3 . "Connecticut". ":";
-  echo date(" h:i a"); $state="Connecticut";
+  $state="Connecticut";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1589,142 +2013,186 @@ elseif ($area == "475") {
 
 elseif ($area == "478") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "475") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arkansas";
   echo "";
   echo  $line3 . "Arkansas". ":";
-  echo date(" h:i a"); $state="Arkansas";
+  $state="Arkansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "478") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "479") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arkansas";
   echo "";
   echo  $line3 . "Arkansas". ":";
-  echo date(" h:i a"); $state="Arkansas";
+  $state="Arkansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "480") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arizona";
   echo "";
   echo  $line3 . "Arizona". ":";
-  echo date(" h:i a"); $state="Arizona";
+  $state="Arizona";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "484") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "501") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arkansas";
   echo "";
   echo  $line3 . "Arkansas". ":";
-  echo date(" h:i a"); $state="Arkansas";
+  $state="Arkansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "502") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kentucky";
   echo "";
   echo  $line3 . "Kentucky". ":";
-  echo date(" h:i a"); $state="Kentucky";
+  $state="Kentucky";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "503") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oregon";
   echo "";
   echo  $line3 . "Oregon". ":";
-  echo date(" h:i a"); $state="Oregon";
+  $state="Oregon";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "504") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Louisiana";
   echo "";
   echo  $line3 . "Louisiana". ":";
-  echo date(" h:i a"); $state="Louisiana";
+  $state="Louisiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "505") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Mexico";
   echo "";
   echo  $line3 . "New Mexico". ":";
-  echo date(" h:i a"); $state="New Mexico";
+  $state="New Mexico";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1732,172 +2200,224 @@ elseif ($area == "505") {
 
 elseif ($area == "507") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "508") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "509") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Washington";
   echo "";
   echo  $line3 . "Washington". ":";
-  echo date(" h:i a"); $state="Washington";
+  $state="Washington";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "510") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "512") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "513") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "515") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Iowa";
   echo "";
   echo  $line3 . "Iowa". ":";
-  echo date(" h:i a"); $state="Iowa";
+  $state="Iowa";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "516") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "517") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michigan";
+  $state="Michigan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "518") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "520") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arizona";
   echo "";
   echo  $line3 . "Arizona". ":";
-  echo date(" h:i a"); $state="Arizona";
+  $state="Arizona";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "500" || $area == "521" || $area == "522" || $area == "523" || $area == "524" || $area == "533"  || $area == "544" || $area == "566" || $area == "588"
 || $area == "611" || $area == "700" || $area == "710" || $area == "800" || $area == "809" || $area == "833" || $area == "844" || $area == "855" || $area == "866"
-|| $area == "877" || $area == "880" || $area == "881" || $area == "888" || $area == "900")
+|| $area == "877" || $area == "880" || $area == "881" || $area == "888" || $area == "900" || $area == "911")
 
 
  {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "????";
   echo "";
   echo  $line3 . "????". ":";
-  echo date(" h:i a"); $state="None";
+  $state="No State";
+  echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "530") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -1905,102 +2425,134 @@ elseif ($area == "530") {
 
 elseif ($area == "531") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Nebraska";
   echo "";
   echo  $line3 . "Nebraska". ":";
-  echo date(" h:i a"); $state="Nebraska";
+  $state="Nebraska";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "534") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wisconsin";
   echo "";
   echo  $line3 . "Wisconsin". ":";
-  echo date(" h:i a"); $state="Wisconsin";
+  $state="Wisconsin";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "539") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oklahoma";
   echo "";
   echo  $line3 . "Oklahoma". ":";
-  echo date(" h:i a"); $state="Oklahoma";
+  $state="Oklahoma";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "540") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "541") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oregon";
   echo "";
   echo  $line3 . "Oregon". ":";
-  echo date(" h:i a"); $state="Oregon";
+  $state="Oregon";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "551") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "559") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "561") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2008,39 +2560,51 @@ elseif ($area == "561") {
 
 elseif ($area == "562") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "563") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Iowa";
   echo "";
   echo  $line3 . "Iowa". ":";
-  echo date(" h:i a"); $state="Iowa";
+  $state="Iowa";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "564") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Washington";
   echo "";
   echo  $line3 . "Washington". ":";
-  echo date(" h:i a"); $state="Washington";
+  $state="Washington";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2049,39 +2613,51 @@ elseif ($area == "564") {
 
 elseif ($area == "567") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "570") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "571") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2089,13 +2665,17 @@ elseif ($area == "571") {
 
 elseif ($area == "573") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Missouri";
   echo "";
   echo  $line3 . "Missouri". ":";
-  echo date(" h:i a"); $state="Missouri";
+  $state="Missouri";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2103,13 +2683,17 @@ elseif ($area == "573") {
 
 elseif ($area == "574") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2117,13 +2701,17 @@ elseif ($area == "574") {
 
 elseif ($area == "575") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Mexico";
   echo "";
   echo  $line3 . "New Mexico". ":";
-  echo date(" h:i a"); $state="New Mexico";
+  $state="New Mexico";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2131,90 +2719,118 @@ elseif ($area == "575") {
 
 elseif ($area == "580") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oklahoma";
   echo "";
   echo  $line3 . "Oklahoma". ":";
-  echo date(" h:i a"); $state="Oklahoma";
+  $state="Oklahoma";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "585") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "586") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michigan";
+  $state="Michigan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "601") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Mississippi";
   echo "";
   echo  $line3 . "Mississippi". ":";
-  echo date(" h:i a"); $state="Mississippi";
+  $state="Mississippi";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "602") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arizona";
   echo "";
   echo  $line3 . "Arizona". ":";
-  echo date(" h:i a"); $state="Arizona";
+  $state="Arizona";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "603") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Hampshire";
   echo "";
   echo  $line3 . "New Hampshire". ":";
-  echo date(" h:i a"); $state="New Hampshire";
+  $state="New Hampshire";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "605") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "South Dakota";
   echo "";
   echo  $line3 . "South Dakota". ":";
-  echo date(" h:i a"); $state="South Dakota";
+  $state="South Dakota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2222,104 +2838,136 @@ elseif ($area == "605") {
 
 elseif ($area == "606") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kentucky";
   echo "";
   echo  $line3 . "Kentucky". ":";
-  echo date(" h:i a"); $state="Kentucky";
+  $state="Kentucky";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "607") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "608") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wisconsin";
   echo "";
   echo  $line3 . "Wisconsin". ":";
-  echo date(" h:i a"); $state="Wisconsin";
+  $state="Wisconsin";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "609") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "610") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "612") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "614") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "615") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2327,91 +2975,119 @@ elseif ($area == "615") {
 
 elseif ($area == "616") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michagan". ":";
-  echo date(" h:i a"); $state="Michagan";
+  $state="Michagan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "617") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "618") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "619") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "602") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kansas";
   echo "";
   echo  $line3 . "Kansas". ":";
-  echo date(" h:i a"); $state="Kansas";
+  $state="Kansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "623") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arizona";
   echo "";
   echo  $line3 . "Arizona". ":";
-  echo date(" h:i a"); $state="Arizona";
+  $state="Arizona";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "626") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2419,103 +3095,135 @@ elseif ($area == "626") {
 
 elseif ($area == "628") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "629") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "630") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "631") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "636") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Missouri";
   echo "";
   echo  $line3 . "Missouri". ":";
-  echo date(" h:i a"); $state="Missouri";
+  $state="Missouri";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "640") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "641") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Iowa";
   echo "";
   echo  $line3 . "Iowa". ":";
-  echo date(" h:i a"); $state="Iowa";
+  $state="Iowa";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "646") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2523,205 +3231,269 @@ elseif ($area == "646") {
 
 elseif ($area == "650") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "651") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "657") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "659") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Alabama";
   echo "";
   echo  $line3 . "Alabama". ":";
-  echo date(" h:i a"); $state="Alabama";
+  $state="Alabama";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "660") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Missouri";
   echo "";
   echo  $line3 . "Missouri". ":";
-  echo date(" h:i a"); $state="Missouri";
+  $state="Missouri";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "661") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "662") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Mississippi";
   echo "";
   echo  $line3 . "Mississippi". ":";
-  echo date(" h:i a"); $state="Mississippi";
+  $state="Mississippi";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "667") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Maryland";
   echo "";
   echo  $line3 . "Maryland". ":";
-  echo date(" h:i a"); $state="Maryland";
+  $state="Maryland";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "669") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "678") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "680") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "681") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "682") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "689") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "701") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Dakota";
   echo "";
   echo  $line3 . "North Dakota". ":";
-  echo date(" h:i a"); $state="North Dakota";
+  $state="North Dakota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "702") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Nevada";
   echo "";
   echo  $line3 . "Nevada". ":";
-  echo date(" h:i a"); $state="Nevada";
+  $state="Nevada";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2729,13 +3501,17 @@ elseif ($area == "702") {
 
 elseif ($area == "703") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2743,13 +3519,17 @@ elseif ($area == "703") {
 
 elseif ($area == "704") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -2757,334 +3537,438 @@ elseif ($area == "704") {
 
 elseif ($area == "706") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "707") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "708") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "712") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Iowa";
   echo "";
   echo  $line3 . "Iowa". ":";
-  echo date(" h:i a"); $state="Iowa";
+  $state="Iowa";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "713") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "714") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "715") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wisconsin";
   echo "";
   echo  $line3 . "Wisconsin". ":";
-  echo date(" h:i a"); $state="Wisconsin";
+  $state="Wisconsin";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "716") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "717") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "718") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "719") {
 
-  date_default_timezone_set("America/Denver");
+  $php_var = 360;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Colorado";
   echo "";
   echo  $line3 . "Colorado". ":";
-  echo date(" h:i a"); $state="Colorado";
+  $state="Colorado";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "720") {
 
-  date_default_timezone_set("America/Denver");
+  $php_var = 360;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Colorado";
   echo "";
   echo  $line3 . "Colorado". ":";
-  echo date(" h:i a"); $state="Colorado";
+  $state="Colorado";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "724") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "725") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Nevada";
   echo "";
   echo  $line3 . "Nevada". ":";
-  echo date(" h:i a"); $state="Nevada";
+  $state="Nevada";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "726") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "727") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "731") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "732") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "734") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michigan";
+  $state="Michigan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "737") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "740") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "743") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "747") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "754") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Flolrida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "757") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "760") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3092,257 +3976,337 @@ elseif ($area == "760") {
 
 elseif ($area == "762") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "763") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "765") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "769") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Mississippi";
   echo "";
   echo  $line3 . "Mississippi". ":";
-  echo date(" h:i a"); $state="Mississippi";
+  $state="Mississippi";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "770") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "772") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "773") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "774") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "775") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Nevada";
   echo "";
   echo  $line3 . "Nevada". ":";
-  echo date(" h:i a"); $state="Nevada";
+  $state="Nevada";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "779") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "781") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "785") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kansas";
   echo "";
   echo  $line3 . "Kansas". ":";
-  echo date(" h:i a"); $state="Kansas";
+  $state="Kansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "786") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Flordia";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "801") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Utah";
   echo "";
   echo  $line3 . "Utah". ":";
-  echo date(" h:i a"); $state="Utah";
+  $state="Utah";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "802") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Vermont";
   echo "";
   echo  $line3 . "Vermont". ":";
-  echo date(" h:i a"); $state="Vermont";
+  $state="Vermont";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "803") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "South Carolina";
   echo "";
   echo  $line3 . "South Carolina". ":";
-  echo date(" h:i a"); $state="South Carolina";
+  $state="South Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "804") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Virginia";
   echo "";
   echo  $line3 . "Virginia". ":";
-  echo date(" h:i a"); $state="Virginia";
+  $state="Virginia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "805") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "806") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "808") {
 
-  date_default_timezone_set("Pacific/Honolulu");
+  $php_var = 600;
+   echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Hawaii";
   echo "";
   echo  $line3 . "Hawaii". ":";
-  echo date(" h:i a"); $state="Hawaii";
+  $state="Hawaii";
+  echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3350,13 +4314,17 @@ elseif ($area == "808") {
 
 elseif ($area == "810") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michigan";
+  $state="Michigan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3364,13 +4332,17 @@ elseif ($area == "810") {
 
 elseif ($area == "812") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3378,26 +4350,34 @@ elseif ($area == "812") {
 
 elseif ($area == "813") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "814") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3405,130 +4385,170 @@ elseif ($area == "814") {
 
 elseif ($area == "815") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "816") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Missouri";
   echo "";
   echo  $line3 . "Missouri". ":";
-  echo date(" h:i a"); $state="Missouri";
+  $state="Missouri";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "817") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "818") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "820") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "Calfornia". ":";
-  echo date(" h:i a"); $state="Calfornia";
+  $state="Calfornia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "828") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "830") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "831") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "832") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "838") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3536,13 +4556,17 @@ elseif ($area == "838") {
 
 elseif ($area == "839") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "South Carolina";
   echo "";
   echo  $line3 . "South Carolina". ":";
-  echo date(" h:i a"); $state="South Carolina";
+  $state="South Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3550,52 +4574,68 @@ elseif ($area == "839") {
 
 elseif ($area == "843") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "South Carolina";
   echo "";
   echo  $line3 . "South Carolina". ":";
-  echo date(" h:i a"); $state="South Carolina";
+  $state="South Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "845") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "847") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "848") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3603,26 +4643,34 @@ elseif ($area == "848") {
 
 elseif ($area == "850") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "854") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "South Carolina";
   echo "";
   echo  $line3 . "South Carolina". ":";
-  echo date(" h:i a"); $state="South Carolina";
+  $state="South Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3630,13 +4678,17 @@ elseif ($area == "854") {
 
 elseif ($area == "856") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3644,13 +4696,17 @@ elseif ($area == "856") {
 
 elseif ($area == "857") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3658,143 +4714,187 @@ elseif ($area == "857") {
 
 elseif ($area == "858") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "Calfornia". ":";
-  echo date(" h:i a"); $state="Calfornia";
+  $state="Calfornia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "859") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kentucky";
   echo "";
   echo  $line3 . "Kentucky". ":";
-  echo date(" h:i a"); $state="Kentucky";
+  $state="Kentucky";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "860") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Connecticut";
   echo "";
   echo  $line3 . "Connecticut". ":";
-  echo date(" h:i a"); $state="Connecticut";
+  $state="Connecticut";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "862") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "863") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "864") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "South Carolina";
   echo "";
   echo  $line3 . "South Carolina". ":";
-  echo date(" h:i a"); $state="South Carolina";
+  $state="South Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "865") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "870") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arkansas";
   echo "";
   echo  $line3 . "Arkansas". ":";
-  echo date(" h:i a"); $state="Arkansas";
+  $state="Arkansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "872") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Illinois";
   echo "";
   echo  $line3 . "Illinois". ":";
-  echo date(" h:i a"); $state="Illinois";
+  $state="Illinois";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "878") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Pennsylvania";
   echo "";
   echo  $line3 . "Pennsylvania". ":";
-  echo date(" h:i a"); $state="Pennsylvania";
+  $state="Pennsylvania";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "901") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -3802,246 +4902,322 @@ elseif ($area == "901") {
 
 elseif ($area == "903") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "904") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "906") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michagan";
   echo "";
   echo  $line3 . "Michigan". ":";
-  echo date(" h:i a"); $state="Michigan";
+  $state="Michigan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "907") {
 
-  date_default_timezone_set("America/Anchorage");
+  $php_var = 480; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Alaska";
   echo "";
   echo  $line3 . "Alaska". ":";
-  echo date(" h:i a"); $state="Alaska";
+  $state="Alaska";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "908") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "909") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "910") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "912") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Georgia";
   echo "";
   echo  $line3 . "Georgia". ":";
-  echo date(" h:i a"); $state="Georgia";
+  $state="Georgia";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "913") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Kansas";
   echo "";
   echo  $line3 . "Kansas". ":";
-  echo date(" h:i a"); $state="Kansas";
+  $state="Kansas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "914") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "915") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "916") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "917") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "918") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oklahoma";
   echo "";
   echo  $line3 . "Oklahoma". ":";
-  echo date(" h:i a"); $state="Oklahoma";
+  $state="Oklahoma";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "919") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "920") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Wisconsin";
   echo "";
   echo  $line3 . "Wisconsin". ":";
-  echo date(" h:i a"); $state="Wisconsin";
+  $state="Wisconsin";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "925") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "928") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Arizona";
   echo "";
   echo  $line3 . "Arizona". ":";
-  echo date(" h:i a"); $state="Arizona";
+  $state="Arizona";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "929") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -4049,13 +5225,17 @@ elseif ($area == "929") {
 
 elseif ($area == "930") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Indiana";
   echo "";
   echo  $line3 . "Indiana". ":";
-  echo date(" h:i a"); $state="Indiana";
+  $state="Indiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -4063,115 +5243,151 @@ elseif ($area == "930") {
 
 elseif ($area == "931") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Tennessee";
   echo "";
   echo  $line3 . "Tennessee". ":";
-  echo date(" h:i a"); $state="Tennessee";
+  $state="Tennessee";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "934") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New York";
   echo "";
   echo  $line3 . "New York". ":";
-  echo date(" h:i a"); $state="New York";
+  $state="New York";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "936") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "937") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Ohio";
   echo "";
   echo  $line3 . "Ohio". ":";
-  echo date(" h:i a"); $state="Ohio";
+  $state="Ohio";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "938") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Alabama";
   echo "";
   echo  $line3 . "Alabama". ":";
-  echo date(" h:i a"); $state="Alabama";
+  $state="Alabama";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "940") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "941") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "947") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michagan";
   echo "";
   echo  $line3 . "Michagan". ":";
-  echo date(" h:i a"); $state="Michagan";
+  $state="Michagan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "949") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -4179,102 +5395,134 @@ elseif ($area == "949") {
 
 elseif ($area == "951") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "California";
   echo "";
   echo  $line3 . "California". ":";
-  echo date(" h:i a"); $state="California";
+  $state="California";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "952") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Minnesota";
   echo "";
   echo  $line3 . "Minnesota". ":";
-  echo date(" h:i a"); $state="Minnesota";
+  $state="Minnesota";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "954") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Florida";
   echo "";
   echo  $line3 . "Florida". ":";
-  echo date(" h:i a"); $state="Florida";
+  $state="Florida";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "956") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "959") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Connecticut";
   echo "";
   echo  $line3 . "Connecticut". ":";
-  echo date(" h:i a"); $state="Connecticut";
+  $state="Connecticut";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "970") {
 
-  date_default_timezone_set("America/Denver");
+  $php_var = 360;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Colorado";
   echo "";
   echo  $line3 . "Colorado". ":";
-  echo date(" h:i a"); $state="Colorado";
+  $state="Colorado";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "971") {
 
-  date_default_timezone_set("America/Los_Angeles");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Oregon";
   echo "";
   echo  $line3 . "Oregon". ":";
-  echo date(" h:i a"); $state="Oregon";
+  $state="Oregon";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "972") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -4282,26 +5530,34 @@ elseif ($area == "972") {
 
 elseif ($area == "973") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "New Jersey";
   echo "";
   echo  $line3 . "New Jersey". ":";
-  echo date(" h:i a"); $state="New Jersey";
+  $state="New Jersey";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 
 elseif ($area == "978") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Massachusetts";
   echo "";
   echo  $line3 . "Massachusetts". ":";
-  echo date(" h:i a"); $state="Massachusetts";
+  $state="Massachusetts";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
@@ -4309,89 +5565,105 @@ elseif ($area == "978") {
 
 elseif ($area == "979") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Texas";
   echo "";
   echo  $line3 . "Texas". ":";
-  echo date(" h:i a"); $state="Texas";
+  $state="Texas";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
 elseif ($area == "980") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
-
-
 
 elseif ($area == "984") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "North Carolina";
   echo "";
   echo  $line3 . "North Carolina". ":";
-  echo date(" h:i a"); $state="North Carolina";
+  $state="North Carolina";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
-
 elseif ($area == "985") {
 
-  date_default_timezone_set("America/Mexico_City");
+  $php_var = 300;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Louisiana";
   echo "";
   echo  $line3 . "Louisiana". ":";
-  echo date(" h:i a"); $state="Louisiana";
+  $state="Louisiana";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
-
 elseif ($area == "986") {
 
-  date_default_timezone_set("America/Phoenix");
+  $php_var = 420;
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Idaho";
   echo "";
   echo  $line3 . "Idaho". ":";
-  echo date(" h:i a"); $state="Idaho";
+  $state="Idaho";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
 
-
 elseif ($area == "989") {
 
-  date_default_timezone_set("America/New_York");
+  $php_var = 240; 
+  echo "<script type=\"text/javascript\">var php_var = \"$php_var\";</script>";
+  
   echo $line1;
   echo $line2;
   // echo $line2 . "Michigan";
   echo "";
   echo  $line3 . "Michagan". ":";
-  echo date(" h:i a"); $state="Michagan";
+  $state="Michagan";
+   echo "<div id=\"curTime\" style=\"display: inline-block;\"></div>";
+     echo "<script  src=\"./script.js\"></script>";
 
 }
-
 
 else  {
 
-  echo "Please enter a valid area code and try again";
+  echo "<table><tr><td style='padding:5px; height:10px'>Please enter a valid area code and try again";
 
 }
-
-
 
 $sql = "SELECT * FROM `tblclients` WHERE `state` = '$state'";
 $result = $conn->query($sql);
@@ -4401,16 +5673,11 @@ if ($result->num_rows > 0) {
   while($row = mysqli_fetch_assoc($result)) {
     $i ++;
   }
-
   echo "";
   echo " Total Clients in ";
   echo $state;
   echo ": ";
   echo $i;
-
-
-
-
 $sql2 = "SELECT * FROM `tblclients` WHERE `state` = '$state' AND `status` = 'Active'";
 $result2 = $conn->query($sql2);
 
@@ -4419,31 +5686,38 @@ if ($result2->num_rows > 0) {
   while($row2 = mysqli_fetch_assoc($result2)) {
     $j ++;
   }
-
   $percentage = ($j / $i);
-
   echo "";
-
   echo "";
   echo " Total Active";
   echo ": ";
   echo $j;
-  echo " ";
-  echo "<a href=\"javascript:window.location.href=window.location.href\">refresh</a>";
-
+  echo "  ";
+  //echo "Time: <div id=\"curTime\" style=\"display: inline-block;\"></div>";
+  echo " <a href=\"javascript:window.location.href=window.location.href\">refresh</a></td>";
+  //
+  
 } else {
   echo " 0 Active";
+  echo "  ";
+  //echo "Time: <div id=\"curTime\" style=\"display: inline-block;\"></div>";
+  echo " <a href=\"javascript:window.location.href=window.location.href\">refresh</a></td>";
+  //
+
 }
-
-
 } else {
   echo " 0 Clients";
+  
+  
+    //echo "Time: <div id=\"curTime\" style=\"display: inline-block;\"></div>";
+  echo " <a href=\"javascript:window.location.href=window.location.href\">refresh</a></td>";
+  //
+  
 }
+
 
 
 ?>
-
-
 <script>
 function copy() {
   let textarea = document.getElementById("textarea");
@@ -4453,10 +5727,10 @@ function copy() {
 
 </script>
 
-</td>
+
   </tr>
   <tr>
-    <td style="padding:5px"><textarea placeholder="Use this text area to take notes. This might include the contacts name, detials from their prior communications, or details you might want to save into your note taking application when the call is complete. Think of it as a notepad on the fly" id="textarea" ></textarea></td>
+    <td style="padding:5px"><textarea placeholder="..." id="textarea" ></textarea></td>
   </tr>
   <tr>
     <td style="padding:5px; height:50px" ><button onclick="copy()">Copy</button></td>
